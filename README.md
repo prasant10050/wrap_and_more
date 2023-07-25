@@ -148,6 +148,7 @@ class MyChip extends StatelessWidget {
 |Parameter|Explanation|
 |-----|-----|
 |key|Key for `WrapAndMore`, used to call `WrapAndMoreState`|
+|maxRow|The maximum number of rows to show within the Wrap|
 |overflowWidget|The `overflowWidget` parameter is a function that takes an integer as input, representing the number of remaining children beyond the `maxRow`, and returns a widget to display as the "overflow" representation.|
 |spacing|Parameters control the vertical spacing between children in the Wrap.|
 |runSpacing|Parameters control the horizontal spacing between children in the Wrap.|
