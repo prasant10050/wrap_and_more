@@ -1,10 +1,10 @@
 name: wrap_and_more
 description: A Flutter Wrap widget that builds a special wrap, limiting the number of rows and the count of the remaining children.
 version: 0.0.1
+repository: https://github.com/ibnufth/wrap_and_more
 homepage: https://github.com/ibnufth/wrap_and_more
 issue_tracker: https://github.com/ibnufth/wrap_and_more/issues
-publish_to: https://pub.dev/
-      
+
 environment:
   sdk: ">=3.0.5 <4.0.0"
   flutter: ">=1.17.0"
