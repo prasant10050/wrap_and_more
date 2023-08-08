@@ -79,7 +79,9 @@ class WrapAndMore extends StatelessWidget {
     final GlobalKey rowKey = GlobalKey();
     return GetBuilder(
       key: ObjectKey(children),
-      init: WrapAndMoreController()..initData(children: children, key: rowKey, maxRow: maxRow, spacing: spacing),
+      init: WrapAndMoreController()
+        ..initData(
+            children: children, key: rowKey, maxRow: maxRow, spacing: spacing),
       builder: (controller) {
         return Obx(() {
           if (controller.isCounted.value) {
@@ -89,15 +91,21 @@ class WrapAndMore extends StatelessWidget {
                 overflowWidget(controller.showChildCount.value);
               },
               child: SizedBox(
-                height: (controller.overflowSize.height * maxRow) + (runSpacing * (maxRow - 1)),
+                height: (controller.overflowSize.height * maxRow) +
+                    (runSpacing * (maxRow - 1)),
                 child: Wrap(
-                  direction: Axis.vertical,
                   spacing: spacing,
                   runSpacing: runSpacing,
                   children: controller.isRendered.value
                       ? [
-                          ...children.take(controller.showChildCount.value).toList(),
-                          if (children.length - controller.showChildCount.value > 0) overflowWidget(children.length - controller.showChildCount.value)
+                          ...children
+                              .take(controller.showChildCount.value)
+                              .toList(),
+                          if (children.length -
+                                  controller.showChildCount.value >
+                              0)
+                            overflowWidget(children.length -
+                                controller.showChildCount.value)
                         ]
                       : children.toList(),
                 ),
@@ -107,8 +115,8 @@ class WrapAndMore extends StatelessWidget {
           return SizedBox(
             width: 100,
             child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Column(
+              scrollDirection: Axis.horizontal,
+              child: Row(
                 key: rowKey,
                 children: [
                   ...children
