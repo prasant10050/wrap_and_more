@@ -105,7 +105,7 @@ class WrapAndMoreController extends GetxController {
           listAreaOfLastChild.add(_childrenArea[indexOfTempArea]);
         }
         showAreaCount++;
-        if (listOfTempArea[i] < _childrenArea[indexOfTempArea + 1]) {
+        if (listOfTempArea[i] < _childrenArea[indexOfTempArea]) {
           indexOfTempArea++;
           break;
         }
