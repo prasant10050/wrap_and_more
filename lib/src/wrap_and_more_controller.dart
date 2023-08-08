@@ -91,8 +91,7 @@ class WrapAndMoreController extends GetxController {
 
   /// Calculates the number of child widgets to display within the `Wrap`.
   void countChildWidgetShow() {
-    List<double> listOfTempArea =
-        List.generate(maxRowChild, (index) => areaWrap.value / maxRowChild);
+    List<double> listOfTempArea = List.generate(maxRowChild, (index) => areaWrap.value / maxRowChild);
 
     int indexOfTempArea = 0;
     int showAreaCount = 0;
@@ -100,7 +99,7 @@ class WrapAndMoreController extends GetxController {
     List<double> listAreaOfLastChild = [];
 
     for (int i = 0; i < listOfTempArea.length; i++) {
-      while (indexOfTempArea + 1 < _childrenArea.length) {
+      while (indexOfTempArea < _childrenArea.length) {
         listOfTempArea[i] = listOfTempArea[i] - _childrenArea[indexOfTempArea];
         if (i == listOfTempArea.length - 1) {
           listAreaOfLastChild.add(_childrenArea[indexOfTempArea]);
@@ -114,8 +113,7 @@ class WrapAndMoreController extends GetxController {
       }
     }
 
-    double lastRowArea =
-        listAreaOfLastChild.sum + (overflowSize.width * overflowSize.height);
+    double lastRowArea = listAreaOfLastChild.sum + (overflowSize.width * overflowSize.height);
 
     if (lastRowArea >= listOfTempArea.last) {
       showAreaCount--;
